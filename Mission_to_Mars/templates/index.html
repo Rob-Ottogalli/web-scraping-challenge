@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mars Data</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="stylesheet.css">
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="jumbotron text-center">
+      <h1>Welcome to the Mars Data page</h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Get New Data!</a></p>
+    </div>
+    <h2>{{ mars_page.NASA_Headlines.Nasa_title }}</h2>
+    <p>{{ mars_page.NASA_Headlines.Nasa_teaser }}</p>
+    <h2>Featured Mars Image</h2>
+    <img src="{{ mars_page.Mars_Images }}" alt="Mars" width="760" >
+    <h3>Mars Weather</h3>
+    <p>{{ mars_page.Mars_Weather }}</p>
+    <h3>Mars Facts</h3>
+    <div>
+        {{ mars_page.Mars_Facts }}
+    </div>
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <figure>
+                    <img src="{{ mars_page.Mars_Hemispheres.0.img_url }}" alt="Mars" width="400" >
+                    <figcaption>{{ mars_page.Mars_Hemispheres.0.hemi_title }}</figcaption>
+                </figure>
+            </div>
+            <div class="col">
+                <figure>
+                    <img src="{{ mars_page.Mars_Hemispheres.1.img_url }}" alt="Mars" width="400" >
+                    <figcaption>{{ mars_page.Mars_Hemispheres.1.hemi_title }}</figcaption>
+                </figure>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <figure>
+                    <img src="{{ mars_page.Mars_Hemispheres.2.img_url }}" alt="Mars" width="400" >
+                    <figcaption>{{ mars_page.Mars_Hemispheres.2.hemi_title }}</figcaption>
+                </figure>
+            </div>
+            <div class="col">
+                <figure>
+                    <img src="{{ mars_page.Mars_Hemispheres.3.img_url }}" alt="Mars" width="400" >
+                    <figcaption>{{ mars_page.Mars_Hemispheres.3.hemi_title }}</figcaption>
+                </figure>
+            </div>
+        </div>
+      </div>
+
+  </div>
+  </div>
+</body>
+
+</html>

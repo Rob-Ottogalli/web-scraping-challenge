@@ -64,8 +64,15 @@ def JPL_mars_images():
     results = soup.find_all("div", class_="carousel_items")[0]
 
     # Use Beautiful Soup's find() method to retrieve attribute of image URL
-    a = results.find("a")
-    href = a["data-link"]
+    article = results.find("article")
+    # Grab style attribute within article tag
+    style = article["style"]
+
+    # Trim Style attribute to isolate the href image URL
+    trimmed_style = style.split("'")
+
+    # Save trimmed URL as a variable
+    href = trimmed_style[1]
 
     # Store image URL to a variable
     featured_image_url = f"https://www.jpl.nasa.gov{href}"
@@ -181,7 +188,7 @@ def mars_hemispheres():
     # Return resulsts
     return hemi_data_list
 
-def screpe_info():
+def scrape_info():
     nasa = nasa_mars_news()
     mars_images = JPL_mars_images()
     weather_report = mars_weather()
@@ -190,11 +197,11 @@ def screpe_info():
 
     # Store data in a dictionary
     mars_data = {
-        "NASA Headlines": nasa,
-        "Mars Images": mars_images,
-        "Mars Weather": weather_report,
-        "Mars Facts": mars_table,
-        "Mars Hemispheres": hemi_data
+        "NASA_Headlines": nasa,
+        "Mars_Images": mars_images,
+        "Mars_Weather": weather_report,
+        "Mars_Facts": mars_table,
+        "Mars_Hemispheres": hemi_data
     }
 
     # Return dictionary
