@@ -96,8 +96,14 @@ def mars_weather():
     # Retrieve the parent div for the paragraph containing the most recent weather Tweet
     results = soup.find_all('p', class_='TweetTextSize TweetTextSize--normal js-tweet-text tweet-text')[0]
 
-    # Set variable to hold title
-    weather = results.text
+    # Set variable to hold title text
+    text = results.text
+
+    # Trim text to remove pic.twitter from a tag
+    trimmed = text.split("hPa")
+
+    # Set variable to hold Twitter text
+    weather = trimmed[0]
 
     # Return results
     return weather
