@@ -10,12 +10,15 @@ body {
     font-family: Georgia, "Times New Roman", Times, serif;
     font-size: 18px;
     line-height: 150%;
-    color: rgb(33, 143, 125);
+    color: rgb(33, 84, 143);
     background: #f3f7f5ce;
   }
 
 .center {
     margin-left: auto;
     margin-right: auto;
-    text-align: center;
+}
+
+.small-font {
+    font-size: smaller;
 }
