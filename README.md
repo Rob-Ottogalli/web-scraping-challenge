@@ -6,3 +6,4 @@ To access this repository, open Mission_to_Mars folder:
 * Open anaconda.prompt and run app.py to run the Flask app.
 * Open index.html in the templates folder to view the Flask template web page.
 * Open the static folder to view the CSS. 
+* Open the screenshots folder to view the screenshots of the Flask web page showing the page compiled with the scraped data.
