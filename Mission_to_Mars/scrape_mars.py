@@ -100,7 +100,7 @@ def mars_weather():
     text = results.text
 
     # Trim text to remove pic.twitter from a tag
-    trimmed = text.split("hPa")
+    trimmed = text.split(".")
 
     # Set variable to hold Twitter text
     weather = trimmed[0]
